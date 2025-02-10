@@ -1,11 +1,13 @@
 <template>
-    <header class="header block">
-        <div class="wrapper">
+    <header class="header" :style="{backgroundColor: theme.headerColor}">
+        <div class="wrapper block">
             <button @click="theme.toggleTheme">{{ theme.currentTheme }}</button>
         </div>
     </header>
-    <main class="cards">
-        <div class="card"></div>
+    <main class="main cards" :style="{backgroundColor: theme.bodyColor}">
+        <div class="wrapper block">
+            <div class="card"></div>
+        </div>
     </main>
 </template>
 

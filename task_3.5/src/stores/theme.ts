@@ -19,8 +19,20 @@ export const useThemeStore = defineStore('theme', {
     },
     actions: {
         toggleTheme() {
-            if (this.currentTheme === Theme.light) this.currentTheme = Theme.dark;
-            else this.currentTheme = Theme.light;
+            if (this.currentTheme === Theme.light) {
+                 this.currentTheme = Theme.dark;
+                 
+                 this.headerColor = '#313131';
+                 this.bodyColor = '#222222';
+                 this.borderColor = '#646464';
+            }
+            else if (this.currentTheme === Theme.dark) {
+                this.currentTheme = Theme.light;
+
+                this.headerColor = 'white';
+                this.bodyColor = '#F2F5F7';
+                this.borderColor = '#DEDFE5';
+            }
         }
     }
 });
