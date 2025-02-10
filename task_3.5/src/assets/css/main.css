@@ -1,0 +1,34 @@
+html, body, #app {
+    width: 100%;
+    height: 100%
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    background-color: #F2F5F7;
+}
+
+.wrapper {
+    
+}
+
+.header {
+
+}
+
+.block {
+    padding: 33px 66px;
+}
+
+.cards {
+
+}
+
+.card {
+
+}

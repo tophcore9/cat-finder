@@ -10,7 +10,11 @@ export type Theme = (typeof Theme)[keyof typeof Theme];
 export const useThemeStore = defineStore('theme', {
     state: () => {
         return {
-            currentTheme: Theme.light as Theme
+            currentTheme: Theme.light as Theme,
+            logoUrl: '',
+            headerColor: 'white',
+            bodyColor: '#F2F5F7',
+            borderColor: '#DEDFE5',
         }
     },
     actions: {

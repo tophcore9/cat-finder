@@ -1,7 +1,12 @@
 <template>
-    <header class="header">
-        <button @click="theme.toggleTheme">{{ theme.currentTheme }}</button>
+    <header class="header block">
+        <div class="wrapper">
+            <button @click="theme.toggleTheme">{{ theme.currentTheme }}</button>
+        </div>
     </header>
+    <main class="cards">
+        <div class="card"></div>
+    </main>
 </template>
 
 <script lang="ts">
@@ -20,6 +25,6 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-
+<style>
+@import url(./assets/css/main.css);
 </style>
