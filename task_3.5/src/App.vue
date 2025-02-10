@@ -1,15 +1,17 @@
 <template>
-    <button @click="counterStore.increment">{{ counterStore.count }}</button>
+    <header class="header">
+        <button @click="theme.toggleTheme">{{ theme.currentTheme }}</button>
+    </header>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useCounterStore } from '@/stores/counter.ts';
+import { useThemeStore } from '@/stores/theme';
 
 export default defineComponent({
     data() {
         return {
-            counterStore: useCounterStore()
+            theme: useThemeStore()
         }
     },
     methods: {
