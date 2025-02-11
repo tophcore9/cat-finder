@@ -9,8 +9,8 @@
                     :src="theme.logoUrl"
                     alt="Logo not found"
                 />
-                <SearchBox :theme-store="theme"/>
-                <SettingsBox :theme-store="theme"/>
+                <SearchBox :theme-store="theme" />
+                <SettingsBox :theme-store="theme" />
             </div>
             <ThemePicker :theme-store="theme" />
         </div>
@@ -19,7 +19,10 @@
         class="main"
         :style="{ backgroundColor: theme.bodyColor }"
     >
-        <Cards :theme-store="theme"/>
+        <Cards
+            :theme-store="theme"
+            :cats="cats.cats"
+        />
     </main>
 </template>
 
@@ -42,11 +45,11 @@ export default defineComponent({
     data() {
         return {
             theme: useThemeStore(),
-            cats: useCatsStore()
+            cats: useCatsStore(),
         };
     },
     mounted() {
-        // this.cards = 
+        this.cats.getCats();
     },
 });
 </script>

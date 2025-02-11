@@ -1,10 +1,11 @@
 <template>
     <div class="wrapper block cards">
-        <Card :theme-store="themeStore"/>
-        <Card :theme-store="themeStore"/>
-        <Card :theme-store="themeStore"/>
-        <Card :theme-store="themeStore"/>
-        <Card :theme-store="themeStore"/>
+        <Card
+            :theme-store="themeStore"
+            v-for="(cat, index) in cats"
+            :key="index"
+            :image-url="cat.url"
+        />
     </div>
 </template>
 
@@ -14,12 +15,16 @@ import Card from '@/components/Card.vue';
 
 export default defineComponent({
     components: {
-        Card
+        Card,
     },
     props: {
         themeStore: {
             type: Object,
             required: true,
+        },
+        cats: {
+            type: Object,
+            required: false,
         },
     },
 });

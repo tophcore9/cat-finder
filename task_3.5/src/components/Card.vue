@@ -1,11 +1,16 @@
 <template>
     <div
         class="card"
-        :style="{ borderColor: themeStore.borderColor, backgroundColor: themeStore.elementColor }"
+        :style="{ borderColor: themeStore.borderColor, backgroundImage: `url(${imageUrl})`}"
     >
-        <div class="favorite" :style="{backgroundImage: `url(${themeStore.favoritesIconUrl})`, backgroundColor: themeStore.headerColor, borderColor: themeStore.borderColor}">
-            
-        </div>
+        <div
+            class="favorite"
+            :style="{
+                backgroundImage: `url(${themeStore.favoritesIconUrl})`,
+                backgroundColor: themeStore.headerColor,
+                borderColor: themeStore.borderColor,
+            }"
+        ></div>
     </div>
 </template>
 
@@ -18,6 +23,10 @@ export default defineComponent({
             type: Object,
             required: true,
         },
+        imageUrl: {
+            type: String,
+            required: true
+        }
     },
 });
 </script>
@@ -29,22 +38,24 @@ export default defineComponent({
     border-width: 1px;
     border-style: solid;
     border-radius: 8px;
-    
-    opacity: 0.5;
-    
+
     position: relative;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .favorite {
     width: 36px;
     height: 36px;
-    
+
     border-radius: 50%;
     border-width: 1px;
     border-style: solid;
-    
+
     background-position: center;
     background-repeat: no-repeat;
-    
+
     position: absolute;
     top: 15px;
     right: 15px;
