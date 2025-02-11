@@ -9,40 +9,39 @@
                     :src="theme.logoUrl"
                     alt="Logo not found"
                 />
-                <input type="text" class="search-box" placeholder="Search by name" :style="{backgroundImage: `url(${theme.searchIconUrl})`, borderColor: theme.borderColor, backgroundColor: theme.elementColor}">
-                <button class="settings-box" :style="{borderColor: theme.borderColor, backgroundImage: `url(${theme.settingsIconUrl})`, backgroundColor: theme.elementColor}"></button>
+                <SearchBox :theme-store="theme"/>
+                <SettingsBox :theme-store="theme"/>
             </div>
-            <button
-                @click="theme.toggleTheme"
-                class="theme-picker"
-                :style="{ backgroundImage: `url(${theme.themeIconUrl})` }"
-            ></button>
+            <ThemePicker :theme-store="theme" />
         </div>
     </header>
     <main
         class="main"
         :style="{ backgroundColor: theme.bodyColor }"
     >
-        <div class="wrapper block cards">
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor, backgroundColor: theme.elementColor }"
-                v-for="(card, index) in cards"
-                :key="index"
-            ></div>
-        </div>
+        <Cards :theme-store="theme"/>
     </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useThemeStore } from '@/stores/theme';
+import ThemePicker from './components/ThemePicker.vue';
+import Cards from './components/Cards.vue';
+import SettingsBox from './components/SettingsBox.vue';
+import SearchBox from './components/SearchBox.vue';
 
 export default defineComponent({
+    components: {
+        SearchBox,
+        SettingsBox,
+        ThemePicker,
+        Cards,
+    },
     data() {
         return {
             theme: useThemeStore(),
-            cards: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+            cards: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
         };
     },
     methods: {},

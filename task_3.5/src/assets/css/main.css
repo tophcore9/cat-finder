@@ -55,75 +55,7 @@ body,
 
 .main {
     padding-top: 124px;
+    min-height: 100%;
 
     transition: background-color 0.2s ease-out;
-}
-
-.cards {
-    height: 100%;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr) auto;
-    gap: 32px;
-}
-
-.card {
-    min-height: 325px;
-
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 8px;
-    
-    opacity: 0.5;
-}
-
-.theme-picker {
-    width: 73px;
-    height: 38px;
-    border: 0;
-    background-color: transparent;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    opacity: 0.7;
-}
-.theme-picker:hover {
-    cursor: pointer;
-    opacity: 1;
-}
-
-.search-box {
-    padding-left: 32px;
-    border-width: 1px;
-    border-style: solid;
-    height: 36px;
-    width: 440px;
-    border-radius: 20px;
-    
-    background-repeat: no-repeat;
-    background-position: 8px center;
-}
-.search-box:focus {
-    outline: 0;
-    border: 1px solid #92540A !important;
-}
-
-.settings-box {
-    width: 36px;
-    height: 36px;
-    
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 50%;
-    
-    background-repeat: no-repeat;
-    background-position: center;
-
-    opacity: 0.7;
-}
-.settings-box:hover {
-    cursor: pointer;
-    opacity: 1;
 }
