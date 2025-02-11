@@ -1,7 +1,7 @@
 <template>
     <header
         class="header"
-        :style="{ backgroundColor: theme.headerColor }"
+        :style="{ backgroundColor: theme.headerColor, borderBottomColor: theme.borderColor }"
     >
         <div class="wrapper block header-content">
             <div class="header-sub_content">

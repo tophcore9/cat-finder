@@ -6,7 +6,6 @@ const Theme = {
 } as const;
 type Theme = (typeof Theme)[keyof typeof Theme];
 
-/* TODO: MAKE CONSTANT OBJECTS OF THEMES */
 const darkTheme = {
     currentTheme: Theme.dark,
 

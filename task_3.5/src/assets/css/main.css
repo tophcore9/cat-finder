@@ -3,7 +3,6 @@ body,
 #app {
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 * {
@@ -15,26 +14,29 @@ body,
 .wrapper {
     margin: auto;
 
-    max-width: 1440px;
     width: 100%;
     height: 100%;
+    max-width: 1440px;
 }
 
 .header {
     width: 100%;
     height: 124px;
+    
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    /* position: fixed; */
+    position: fixed;
+    z-index: 1;
 
     transition: background-color 0.2s ease-out;
 }
 
 .header-content {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,21 +50,13 @@ body,
 }
 
 .block {
-    width: 100%;
-    height: 100%;
     padding: 33px 66px;
 }
 
 .main {
-    margin-bottom: 300px;
-
-    height: 100%;
+    padding-top: 124px;
 
     transition: background-color 0.2s ease-out;
-
-    overflow-y: scroll;
-    
-    padding-bottom: 300px;
 }
 
 .cards {
@@ -77,13 +71,11 @@ body,
 .card {
     min-height: 325px;
 
-    height: 100%;
-    width: 100%;
     border-width: 1px;
     border-style: solid;
     border-radius: 8px;
     
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .theme-picker {
