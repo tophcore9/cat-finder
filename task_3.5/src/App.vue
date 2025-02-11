@@ -26,6 +26,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useThemeStore } from '@/stores/theme';
+import { useCatsStore } from '@/stores/catsAPI';
 import ThemePicker from './components/ThemePicker.vue';
 import Cards from './components/Cards.vue';
 import SettingsBox from './components/SettingsBox.vue';
@@ -41,10 +42,12 @@ export default defineComponent({
     data() {
         return {
             theme: useThemeStore(),
-            cards: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+            cats: useCatsStore()
         };
     },
-    methods: {},
+    mounted() {
+        // this.cards = 
+    },
 });
 </script>
 

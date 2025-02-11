@@ -13,6 +13,8 @@ const darkTheme = {
     settingsIconUrl: '/src/assets/icons/settings-dark_theme.svg',
     themeIconUrl: '/src/assets/icons/theme_picker-dark_theme.svg',
     searchIconUrl: '/src/assets/icons/search-dark_theme.svg',
+    favoritesIconUrl: '/src/assets/icons/favorites-dark_theme.svg',
+    favoritesCheckedIconUrl: '/src/assets/icons/favorites-dark_theme-checked.svg',
 
     headerColor: '#313131',
     bodyColor: '#222222',
@@ -27,6 +29,8 @@ const lightTheme = {
     settingsIconUrl: '/src/assets/icons/settings-light_theme.svg',
     themeIconUrl: '/src/assets/icons/theme_picker-light_theme.svg',
     searchIconUrl: '/src/assets/icons/search-light_theme.svg',
+    favoritesIconUrl: '/src/assets/icons/favorites-light_theme.svg',
+    favoritesCheckedIconUrl: '/src/assets/icons/favorites-light_theme-checked.svg',
 
     headerColor: '#FFFFFF',
     bodyColor: '#F2F5F7',
@@ -43,6 +47,8 @@ export const useThemeStore = defineStore('theme', {
             settingsIconUrl: lightTheme.settingsIconUrl,
             themeIconUrl: lightTheme.themeIconUrl,
             searchIconUrl: lightTheme.searchIconUrl,
+            favoritesIconUrl: lightTheme.favoritesIconUrl,
+            favoritesCheckedIconUrl: lightTheme.favoritesCheckedIconUrl,
 
             headerColor: lightTheme.headerColor,
             bodyColor: lightTheme.bodyColor,
