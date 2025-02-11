@@ -33,6 +33,20 @@ body,
     transition: background-color 0.2s ease-out;
 }
 
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-sub_content {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 16px;
+}
+
 .block {
     width: 100%;
     height: 100%;
@@ -47,13 +61,8 @@ body,
     transition: background-color 0.2s ease-out;
 
     overflow-y: scroll;
-}
-
-.header-content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
+    padding-bottom: 300px;
 }
 
 .cards {
@@ -61,6 +70,7 @@ body,
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr) auto;
     gap: 32px;
 }
 
@@ -72,6 +82,8 @@ body,
     border-width: 1px;
     border-style: solid;
     border-radius: 8px;
+    
+    opacity: 0.7;
 }
 
 .theme-picker {
@@ -102,7 +114,8 @@ body,
     background-position: 8px center;
 }
 .search-box:focus {
-    outline: 1px solid #92540A;
+    outline: 0;
+    border: 1px solid #92540A !important;
 }
 
 .settings-box {
@@ -115,14 +128,10 @@ body,
     
     background-repeat: no-repeat;
     background-position: center;
+
+    opacity: 0.7;
 }
 .settings-box:hover {
     cursor: pointer;
-}
-
-.header-sub_content {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    gap: 16px;
+    opacity: 1;
 }

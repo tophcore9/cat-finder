@@ -26,103 +26,9 @@
         <div class="wrapper block cards">
             <div
                 class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
-            ></div>
-            <div
-                class="card"
-                :style="{ borderColor: theme.borderColor }"
+                :style="{ borderColor: theme.borderColor, backgroundColor: theme.elementColor }"
+                v-for="(card, index) in cards"
+                :key="index"
             ></div>
         </div>
     </main>
@@ -136,6 +42,7 @@ export default defineComponent({
     data() {
         return {
             theme: useThemeStore(),
+            cards: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
         };
     },
     methods: {},
