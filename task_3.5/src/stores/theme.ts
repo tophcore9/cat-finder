@@ -77,4 +77,7 @@ export const useThemeStore = defineStore('theme', {
             }
         },
     },
+    persist: {
+        storage: sessionStorage
+    }
 });

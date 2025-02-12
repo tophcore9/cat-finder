@@ -13,8 +13,8 @@ const catById: string = 'https://cataas.com/cat';
 export const useCatsStore = defineStore('cats', {
     state: () => {
         return {
-            cats: [] as Cat[],
-            favoritedCats: [] as Cat[],
+            cats: [] as Cat[], /* An array of cats that will be shown */
+            favoriteCats: [] as Cat[], /* Cats that we're already added to the favorite list */
             isFavorites: false,
             searchInput: [] as String[],
             limit: 10 as Number,
@@ -30,22 +30,22 @@ export const useCatsStore = defineStore('cats', {
                 element.url = `${catById}/${element.id}`;
                 element.isFavorite = false;
 
-                this.favoritedCats.forEach((favoriteCat) => {
+                this.favoriteCats.forEach((favoriteCat) => {
                     if (favoriteCat.id === element.id) element.isFavorite = true;
                 });
             });
         },
         addFavorite(cat: Cat) {
-            this.favoritedCats.push(cat);
+            this.favoriteCats.push(cat);
         },
         removeFavorite(id: string) {
-            this.favoritedCats = this.favoritedCats.filter((cat) => cat.id !== id);
+            this.favoriteCats = this.favoriteCats.filter((cat) => cat.id !== id);
         },
         toggleFavoriteCats() {
             this.isFavorites = !this.isFavorites;
 
             if (this.isFavorites) {
-                this.cats = this.favoritedCats;
+                this.cats = this.favoriteCats;
             } else {
                 this.fetchCats();
             }

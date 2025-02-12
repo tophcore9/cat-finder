@@ -11,10 +11,12 @@ body,
     box-sizing: border-box;
 }
 
+/* For avoiding shifting by count of images */
 body {
     overflow-y: scroll;
 }
 
+/* Disabeling side-arrows in number input fields */
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;

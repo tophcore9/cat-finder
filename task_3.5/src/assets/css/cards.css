@@ -34,12 +34,6 @@
     user-select: none;
 }
 
-.image {
-    max-height: 100%;
-    max-width: 100%;
-    border-radius: 20px;
-}
-
 .image-wrapper {
     padding: 24px;
     max-width: 100vw;
@@ -53,4 +47,10 @@
 
     position: fixed;
     top: 124px;
+}
+
+.image {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 20px;
 }

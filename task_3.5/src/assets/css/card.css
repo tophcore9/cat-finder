@@ -32,5 +32,4 @@
 }
 .favorite:hover {
     cursor: pointer;
-    /* background-image: url(../icons/favorites-hovered.svg) !important; */
 }
