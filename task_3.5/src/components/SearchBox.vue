@@ -20,7 +20,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     data() {
         return {
-            searchInput: ''
+            searchInput: '',
         };
     },
     props: {
@@ -35,9 +35,10 @@ export default defineComponent({
     },
     watch: {
         searchInput() {
+            /* Handling a search input field for the proper sending it to API in advance */
             this.apiStore.searchInput = this.searchInput.split(' ');
-        }
-    }
+        },
+    },
 });
 </script>
 

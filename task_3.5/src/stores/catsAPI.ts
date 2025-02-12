@@ -15,13 +15,13 @@ export const useCatsStore = defineStore('cats', {
         return {
             cats: [] as Cat[], /* An array of cats that will be shown */
             favoriteCats: [] as Cat[], /* Cats that we're already added to the favorite list */
-            isFavorites: false,
-            searchInput: [] as String[],
-            limit: 10 as Number,
+            isFavorites: false, /* Check if site shows only favorite cats at the moment */
+            searchInput: [] as String[], /* Amount of tags that build a search prompt together */
+            limit: 10 as Number, /* How many cards from API the user wants to get */
         };
     },
     actions: {
-        async fetchCats() {
+        async fetchCats() { /* Fetching API and getting according items */
             const response = await fetch(`${catsAPI}?tags=${this.searchInput}&limit=${this.limit}`);
             this.cats = await response.json();
             this.isFavorites = false;
@@ -35,13 +35,13 @@ export const useCatsStore = defineStore('cats', {
                 });
             });
         },
-        addFavorite(cat: Cat) {
+        addFavorite(cat: Cat) { /* Add a cat as one from favorites */
             this.favoriteCats.push(cat);
         },
-        removeFavorite(id: string) {
+        removeFavorite(id: string) { /* Remove a cat from the favorite collection */
             this.favoriteCats = this.favoriteCats.filter((cat) => cat.id !== id);
         },
-        toggleFavoriteCats() {
+        toggleFavoriteCats() { /* Toggling button for showing only favorites */
             this.isFavorites = !this.isFavorites;
 
             if (this.isFavorites) {

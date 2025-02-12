@@ -63,6 +63,7 @@ export default defineComponent({
     },
     methods: {
         openSettings() {
+            /* Showing settings that were hidden */
             this.isSettingsOpened = !this.isSettingsOpened;
         },
     },

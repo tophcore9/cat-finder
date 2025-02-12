@@ -8,10 +8,8 @@
             :cat="item"
             @showModal="showModal"
         />
-        
-        <h2 v-if="items?.length === 0">
-            There are no cats :&lpar;
-        </h2>
+
+        <h2 v-if="items?.length === 0">There are no cats :&lpar;</h2>
 
         <div
             class="modal"
@@ -58,6 +56,7 @@ export default defineComponent({
     },
     methods: {
         showModal(image: string) {
+            /* Show a modal window with the picture of the cat */
             this.currentImage = image;
             this.isModalShown = !this.isModalShown;
         },

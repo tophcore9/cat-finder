@@ -6,6 +6,7 @@ const Theme = {
 } as const;
 type Theme = (typeof Theme)[keyof typeof Theme];
 
+/* DARK THEME */
 const darkTheme = {
     currentTheme: Theme.dark,
 
@@ -26,6 +27,7 @@ const darkTheme = {
     borderColor: '#646464',
 };
 
+/* LIGHT THEME */
 const lightTheme = {
     currentTheme: Theme.light,
 
