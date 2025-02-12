@@ -1,7 +1,8 @@
 <template>
     <div
         class="card"
-        :style="{ borderColor: themeStore.borderColor, backgroundImage: `url(${imageUrl})`}"
+        :style="{ borderColor: themeStore.borderColor, backgroundImage: `url(${imageUrl})` }"
+        @click="showModal"
     >
         <div
             class="favorite"
@@ -25,8 +26,13 @@ export default defineComponent({
         },
         imageUrl: {
             type: String,
-            required: true
-        }
+            required: true,
+        },
+    },
+    methods: {
+        showModal() {
+            this.$emit('showModal', this.imageUrl);
+        },
     },
 });
 </script>
@@ -40,11 +46,15 @@ export default defineComponent({
     border-radius: 8px;
 
     position: relative;
-    
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
+.card:hover {
+    cursor: pointer;
+}
+
 .favorite {
     width: 36px;
     height: 36px;
