@@ -1,0 +1,15 @@
+.search-box {
+    padding-left: 32px;
+    border-width: 1px;
+    border-style: solid;
+    height: 36px;
+    width: 440px;
+    border-radius: 20px;
+
+    background-repeat: no-repeat;
+    background-position: 8px center;
+}
+.search-box:focus {
+    outline: 0;
+    border: 1px solid #ffc682 !important;
+}

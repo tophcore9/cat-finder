@@ -1,7 +1,7 @@
 <template>
     <header
         class="header"
-        :style="{ backgroundColor: theme.headerColor, borderBottomColor: theme.borderColor }"
+        :style="{ backgroundColor: theme.headerColor, borderBottomColor: theme.borderColor, color: theme.textColor }"
     >
         <div class="wrapper block header-content">
             <div class="header-sub_content">
@@ -9,19 +9,20 @@
                     :src="theme.logoUrl"
                     alt="Logo not found"
                 />
-                <SearchBox :theme-store="theme" />
-                <SettingsBox :theme-store="theme" />
+                <SearchBox :theme-store="theme" :api-store="cats"/>
+                <SettingsBox :theme-store="theme" :api-store="cats"/>
             </div>
             <ThemePicker :theme-store="theme" />
         </div>
     </header>
     <main
         class="main"
-        :style="{ backgroundColor: theme.bodyColor }"
+        :style="{ backgroundColor: theme.bodyColor, color: theme.textColor }"
     >
         <Cards
+            :api-store="cats"
             :theme-store="theme"
-            :cats="cats.cats"
+            :items="cats.cats"
         />
     </main>
 </template>
@@ -49,7 +50,7 @@ export default defineComponent({
         };
     },
     mounted() {
-        this.cats.getCats();
+        this.cats.fetchCats();
     },
 });
 </script>

@@ -2,11 +2,16 @@
     <div class="wrapper block cards">
         <Card
             :theme-store="themeStore"
-            v-for="(cat, index) in cats"
+            :api-store="apiStore"
+            v-for="(item, index) in items"
             :key="index"
-            :cat="cat"
+            :cat="item"
             @showModal="showModal"
         />
+        
+        <h2 v-if="items?.length === 0">
+            There are no cats :&lpar;
+        </h2>
 
         <div
             class="modal"
@@ -42,9 +47,13 @@ export default defineComponent({
             type: Object,
             required: true,
         },
-        cats: {
-            type: Object,
+        items: {
+            type: Array<Object>,
             required: false,
+        },
+        apiStore: {
+            type: Object,
+            required: true,
         },
     },
     methods: {

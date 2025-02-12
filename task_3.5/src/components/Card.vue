@@ -29,6 +29,10 @@ export default defineComponent({
             type: Object,
             required: true,
         },
+        apiStore: {
+            type: Object,
+            required: true,
+        },
         cat: {
             type: Object,
             required: true,
@@ -40,6 +44,8 @@ export default defineComponent({
         },
         changeFavorite() {
             this.cat.isFavorite = !this.cat.isFavorite;
+            if (this.cat.isFavorite) this.apiStore.addFavorite(this.cat);
+            else this.apiStore.removeFavorite(this.cat.id);
         },
     },
 });
