@@ -21,13 +21,13 @@ export default defineComponent({
 
 <style scoped>
 .theme-picker {
-    width: 73px;
-    height: 38px;
+    width: 70px;
+    height: 36px;
     border: 0;
     background-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
 
     opacity: 0.7;
 }

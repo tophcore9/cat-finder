@@ -2,7 +2,7 @@
     <input
         type="text"
         class="search-box"
-        placeholder="Search by name"
+        placeholder="Search by tags"
         v-model="searchInput"
         @change="apiStore.fetchCats()"
         :style="{

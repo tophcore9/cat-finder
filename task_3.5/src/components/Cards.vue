@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper block cards">
+    <div class="wrapper cards">
         <Card
             :theme-store="themeStore"
             :api-store="apiStore"

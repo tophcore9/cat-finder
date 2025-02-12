@@ -3,16 +3,19 @@
         class="header"
         :style="{ backgroundColor: theme.headerColor, borderBottomColor: theme.borderColor, color: theme.textColor }"
     >
-        <div class="wrapper block header-content">
-            <div class="header-sub_content">
+        <div class="wrapper header-content">
+            <div class="header-left_content">
                 <img
+                    class="logo"
                     :src="theme.logoUrl"
                     alt="Logo not found"
                 />
                 <SearchBox :theme-store="theme" :api-store="catsAPI"/>
-                <SettingsBox :theme-store="theme" :api-store="catsAPI"/>
             </div>
-            <ThemePicker :theme-store="theme" />
+            <div class="header-right_content">
+                <SettingsBox :theme-store="theme" :api-store="catsAPI"/>
+                <ThemePicker :theme-store="theme" />
+            </div>
         </div>
     </header>
     <main

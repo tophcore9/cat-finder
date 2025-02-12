@@ -1,16 +1,4 @@
 <template>
-    <input
-        type="checkbox"
-        class="settings-box"
-        :style="{
-            borderColor: isSettingsOpened ? themeStore.activeColor : themeStore.borderColor,
-            backgroundImage: isSettingsOpened
-                ? `url(${themeStore.settingsActiveIconUrl})`
-                : `url(${themeStore.settingsIconUrl})`,
-            backgroundColor: themeStore.elementColor,
-        }"
-        @change="openSettings"
-    />
     <div
         class="settings-menu"
         v-if="isSettingsOpened"
@@ -40,6 +28,18 @@
             @change="apiStore.toggleFavoriteCats"
         />
     </div>
+    <input
+        type="checkbox"
+        class="settings-box"
+        :style="{
+            borderColor: isSettingsOpened ? themeStore.activeColor : themeStore.borderColor,
+            backgroundImage: isSettingsOpened
+                ? `url(${themeStore.settingsActiveIconUrl})`
+                : `url(${themeStore.settingsIconUrl})`,
+            backgroundColor: themeStore.elementColor,
+        }"
+        @change="openSettings"
+    />
 </template>
 
 <script lang="ts">
