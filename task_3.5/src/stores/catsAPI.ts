@@ -8,7 +8,7 @@ export interface Cat {
 }
 
 const catsAPI: string = 'https://cataas.com/api/cats';
-const catById: string = 'https://cataas.com/cat/';
+const catById: string = 'https://cataas.com/cat';
 
 export const useCatsStore = defineStore('cats', {
     state: () => {
@@ -23,9 +23,11 @@ export const useCatsStore = defineStore('cats', {
             this.cats = await response.json();
 
             this.cats.forEach((element) => {
-                element.url = catById + element.id;
+                element.url = `${catById}/${element.id}`;
                 element.isFavorite = false;
             });
+
+            console.log(this.cats[0]);
         },
     },
 });

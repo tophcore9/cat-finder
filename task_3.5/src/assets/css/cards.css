@@ -1,0 +1,35 @@
+.cards {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr) auto;
+    gap: 32px;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    user-select: none;
+}
+
+.image {
+    border-radius: 20px;
+}
+
+.image-wrapper {
+    width: 100vw;
+    height: calc(100vh + 124px);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: fixed;
+}
