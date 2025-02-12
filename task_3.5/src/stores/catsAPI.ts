@@ -24,6 +24,7 @@ export const useCatsStore = defineStore('cats', {
         async fetchCats() {
             const response = await fetch(`${catsAPI}?tags=${this.searchInput}&limit=${this.limit}`);
             this.cats = await response.json();
+            this.isFavorites = false;
 
             this.cats.forEach((element) => {
                 element.url = `${catById}/${element.id}`;
@@ -36,11 +37,9 @@ export const useCatsStore = defineStore('cats', {
         },
         addFavorite(cat: Cat) {
             this.favoritedCats.push(cat);
-            console.log(this.favoritedCats);
         },
         removeFavorite(id: string) {
             this.favoritedCats = this.favoritedCats.filter((cat) => cat.id !== id);
-            console.log(this.favoritedCats);
         },
         toggleFavoriteCats() {
             this.isFavorites = !this.isFavorites;

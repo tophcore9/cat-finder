@@ -1,30 +1,41 @@
 <template>
-    <button
+    <input
+        type="checkbox"
         class="settings-box"
         :style="{
-            borderColor: isSettingsOpened ? '#FFC682' : themeStore.borderColor,
+            borderColor: isSettingsOpened ? themeStore.activeColor : themeStore.borderColor,
             backgroundImage: isSettingsOpened
-                ? `url(/src/assets/icons/settings-clicked.svg)`
+                ? `url(${themeStore.settingsActiveIconUrl})`
                 : `url(${themeStore.settingsIconUrl})`,
             backgroundColor: themeStore.elementColor,
         }"
-        @click="openSettings"
-    ></button>
-    <div v-if="isSettingsOpened">
+        @change="openSettings"
+    />
+    <div
+        class="settings-menu"
+        v-if="isSettingsOpened"
+    >
+        <label class="label">
+            Limit:
+            <input
+                type="number"
+                name="limit"
+                class="limit"
+                placeholder="Count of cats"
+                v-model="apiStore.limit"
+                @input="apiStore.fetchCats()"
+                :style="{
+                    borderColor: themeStore.borderColor,
+                    backgroundColor: themeStore.elementColor,
+                    color: themeStore.textColor,
+                }"
+            />
+        </label>
+
         <input
-            type="number"
-            name="limit"
-            class="limit"
-            placeholder="Count of cats"
-            v-model="apiStore.limit"
-            @input="apiStore.fetchCats()"
-            :style="{
-                borderColor: themeStore.borderColor,
-                backgroundColor: themeStore.elementColor,
-                color: themeStore.textColor
-            }"
-        />
-        <input
+            class="favorites"
+            :style="{ borderColor: themeStore.borderColor, backgroundImage: `url(${themeStore.favoritesCheckedIconUrl})`, backgroundColor: themeStore.elementColor }"
+            :checked="apiStore.isFavorites"
             type="checkbox"
             @change="apiStore.toggleFavoriteCats"
         />
@@ -59,36 +70,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.settings-box {
-    width: 36px;
-    height: 36px;
-
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 50%;
-
-    background-repeat: no-repeat;
-    background-position: center;
-
-    opacity: 0.7;
-}
-.settings-box:hover {
-    cursor: pointer;
-    opacity: 1;
-}
-
-.limit {
-    padding-left: 16px;
-
-    height: 36px;
-    width: min-content;
-
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 20px;
-}
-.limit:focus {
-    outline: 0;
-    border: 1px solid #ffc682 !important;
-}
+@import url(../assets/css/settings_box.css);
 </style>

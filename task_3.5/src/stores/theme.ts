@@ -11,12 +11,15 @@ const darkTheme = {
 
     logoUrl: '/src/assets/icons/logo-dark_theme.svg',
     settingsIconUrl: '/src/assets/icons/settings-dark_theme.svg',
+    settingsActiveIconUrl: '/src/assets/icons/settings-dark_theme.svg',
     themeIconUrl: '/src/assets/icons/theme_picker-dark_theme.svg',
     searchIconUrl: '/src/assets/icons/search-dark_theme.svg',
     favoritesIconUrl: '/src/assets/icons/favorites-dark_theme.svg',
+    favoritesActiveIconUrl: '/src/assets/icons/favorites-clicked.svg',
     favoritesCheckedIconUrl: '/src/assets/icons/favorites-dark_theme-checked.svg',
 
     textColor: '#FFFFFF',
+    activeColor: '#FFC682',
     headerColor: '#313131',
     bodyColor: '#222222',
     elementColor: '#454545',
@@ -28,12 +31,15 @@ const lightTheme = {
 
     logoUrl: '/src/assets/icons/logo-light_theme.svg',
     settingsIconUrl: '/src/assets/icons/settings-light_theme.svg',
+    settingsActiveIconUrl: '/src/assets/icons/settings-clicked.svg',
     themeIconUrl: '/src/assets/icons/theme_picker-light_theme.svg',
     searchIconUrl: '/src/assets/icons/search-light_theme.svg',
     favoritesIconUrl: '/src/assets/icons/favorites-light_theme.svg',
+    favoritesActiveIconUrl: '/src/assets/icons/favorites-clicked.svg',
     favoritesCheckedIconUrl: '/src/assets/icons/favorites-light_theme-checked.svg',
 
     textColor: '#323749',
+    activeColor: '#FFC682',
     headerColor: '#FFFFFF',
     bodyColor: '#F2F5F7',
     elementColor: '#FFFFFF',
@@ -47,12 +53,15 @@ export const useThemeStore = defineStore('theme', {
 
             logoUrl: lightTheme.logoUrl,
             settingsIconUrl: lightTheme.settingsIconUrl,
+            settingsActiveIconUrl: lightTheme.settingsActiveIconUrl,
             themeIconUrl: lightTheme.themeIconUrl,
             searchIconUrl: lightTheme.searchIconUrl,
             favoritesIconUrl: lightTheme.favoritesIconUrl,
+            favoritesActiveIconUrl: lightTheme.favoritesActiveIconUrl,
             favoritesCheckedIconUrl: lightTheme.favoritesCheckedIconUrl,
 
             textColor: lightTheme.textColor,
+            activeColor: lightTheme.activeColor,
             headerColor: lightTheme.headerColor,
             bodyColor: lightTheme.bodyColor,
             elementColor: lightTheme.elementColor,

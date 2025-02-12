@@ -9,7 +9,7 @@
             :style="{
                 backgroundImage: `url(${
                     cat.isFavorite
-                        ? themeStore.favoritesCheckedIconUrl
+                        ? themeStore.favoritesActiveIconUrl
                         : themeStore.favoritesIconUrl
                 })`,
                 backgroundColor: themeStore.headerColor,
