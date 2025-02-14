@@ -30,7 +30,7 @@
 import { defineComponent, type PropType } from 'vue';
 import Card from '@/components/Card.vue';
 import type ThemeStore from '@/stores/theme';
-import type { CatsStore } from '@/stores/catsAPI';
+import type { Cat, CatsStore } from '@/stores/catsAPI';
 
 export default defineComponent({
     components: {
@@ -48,7 +48,7 @@ export default defineComponent({
             required: true,
         },
         items: {
-            type: Array<Object>,
+            type: Object as PropType<Array<Cat>>,
             required: false,
         },
         apiStore: {

@@ -9,11 +9,7 @@
     >
         <div class="wrapper header-content">
             <div class="header-left_content">
-                <img
-                    class="logo"
-                    :src="theme.currentTheme.logoUrl"
-                    alt="Logo not found"
-                />
+                <Icon :url="theme.currentTheme.logoUrl" :width="64" :height="64"/>
                 <SearchBox
                     :theme="theme.currentTheme"
                     :api-store="catsAPI"
@@ -51,6 +47,7 @@ import ThemePicker from './components/ThemePicker.vue';
 import Cards from './components/Cards.vue';
 import SettingsBox from './components/SettingsBox.vue';
 import SearchBox from './components/SearchBox.vue';
+import Icon from './components/Icon.vue';
 
 export default defineComponent({
     components: {
@@ -58,6 +55,7 @@ export default defineComponent({
         SettingsBox,
         ThemePicker,
         Cards,
+        Icon
     },
     data() {
         return {
