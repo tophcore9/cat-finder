@@ -13,17 +13,21 @@
                 v-model="apiStore.limit"
                 @input="apiStore.fetchCats()"
                 :style="{
-                    borderColor: themeStore.borderColor,
-                    backgroundColor: themeStore.elementColor,
-                    color: themeStore.textColor,
+                    borderColor: theme.borderColor,
+                    backgroundColor: theme.elementColor,
+                    color: theme.textColor,
                 }"
             />
         </label>
 
         <input
             class="favorites"
-            :style="{ borderColor: themeStore.borderColor, backgroundImage: `url(${themeStore.favoritesCheckedIconUrl})`, backgroundColor: themeStore.elementColor }"
-            :checked="apiStore.isFavorites"
+            :style="{
+                borderColor: theme.borderColor,
+                backgroundImage: `url(${theme.favoritesCheckedIconUrl})`,
+                backgroundColor: theme.elementColor,
+            }"
+            :checked="apiStore.areFavoriteCardsOn"
             type="checkbox"
             @change="apiStore.toggleFavoriteCats"
         />
@@ -32,18 +36,20 @@
         type="checkbox"
         class="settings-box"
         :style="{
-            borderColor: isSettingsOpened ? themeStore.activeColor : themeStore.borderColor,
+            borderColor: isSettingsOpened ? theme.activeColor : theme.borderColor,
             backgroundImage: isSettingsOpened
-                ? `url(${themeStore.settingsActiveIconUrl})`
-                : `url(${themeStore.settingsIconUrl})`,
-            backgroundColor: themeStore.elementColor,
+                ? `url(${theme.settingsActiveIconUrl})`
+                : `url(${theme.settingsIconUrl})`,
+            backgroundColor: theme.elementColor,
         }"
         @change="openSettings"
     />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import type { CatsStore } from '@/stores/catsAPI';
+import type Theme from '@/stores/theme';
+import { defineComponent, type PropType } from 'vue';
 
 export default defineComponent({
     data() {
@@ -52,12 +58,12 @@ export default defineComponent({
         };
     },
     props: {
-        themeStore: {
-            type: Object,
+        theme: {
+            type: Object as PropType<Theme>,
             required: true,
         },
         apiStore: {
-            type: Object,
+            type: Object as PropType<CatsStore>,
             required: true,
         },
     },

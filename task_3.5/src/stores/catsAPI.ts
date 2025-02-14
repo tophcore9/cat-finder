@@ -7,24 +7,38 @@ export interface Cat {
     isFavorite: boolean;
 }
 
+export interface CatsStore {
+    cats: Cat[] /* An array of cats that will be shown */,
+    favoriteCats: Cat[] /* Cats that we're already added to the favorite list */,
+    areFavoriteCardsOn: boolean /* Check if site shows only favorite cats at the moment */,
+    searchInput: string[] /* Amount of tags that build a search prompt together */,
+    limit: number /* How many cards from API the user wants to get */,
+    
+    fetchCats: () => void,
+    addFavorite: (cat: Cat) => void,
+    removeFavorite: (id: string) => void,
+    toggleFavoriteCats: () => void
+}
+
 const catsAPI: string = 'https://cataas.com/api/cats';
 const catById: string = 'https://cataas.com/cat';
 
 export const useCatsStore = defineStore('cats', {
     state: () => {
         return {
-            cats: [] as Cat[], /* An array of cats that will be shown */
-            favoriteCats: [] as Cat[], /* Cats that we're already added to the favorite list */
-            isFavorites: false, /* Check if site shows only favorite cats at the moment */
-            searchInput: [] as String[], /* Amount of tags that build a search prompt together */
-            limit: 10 as Number, /* How many cards from API the user wants to get */
+            cats: [] as Cat[],
+            favoriteCats: [] as Cat[],
+            areFavoriteCardsOn: false,
+            searchInput: [],
+            limit: 10,
         };
     },
     actions: {
-        async fetchCats() { /* Fetching API and getting according items */
+        async fetchCats() {
+            /* Fetching API and getting according items */
             const response = await fetch(`${catsAPI}?tags=${this.searchInput}&limit=${this.limit}`);
             this.cats = await response.json();
-            this.isFavorites = false;
+            this.areFavoriteCardsOn = false;
 
             this.cats.forEach((element) => {
                 element.url = `${catById}/${element.id}`;
@@ -35,16 +49,19 @@ export const useCatsStore = defineStore('cats', {
                 });
             });
         },
-        addFavorite(cat: Cat) { /* Add a cat as one from favorites */
+        addFavorite(cat: Cat) {
+            /* Add a cat as one from favorites */
             this.favoriteCats.push(cat);
         },
-        removeFavorite(id: string) { /* Remove a cat from the favorite collection */
+        removeFavorite(id: string) {
+            /* Remove a cat from the favorite collection */
             this.favoriteCats = this.favoriteCats.filter((cat) => cat.id !== id);
         },
-        toggleFavoriteCats() { /* Toggling button for showing only favorites */
-            this.isFavorites = !this.isFavorites;
+        toggleFavoriteCats() {
+            /* Toggling button for showing only favorites */
+            this.areFavoriteCardsOn = !this.areFavoriteCardsOn;
 
-            if (this.isFavorites) {
+            if (this.areFavoriteCardsOn) {
                 this.cats = this.favoriteCats;
             } else {
                 this.fetchCats();

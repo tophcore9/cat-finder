@@ -1,30 +1,43 @@
 <template>
     <header
         class="header"
-        :style="{ backgroundColor: theme.headerColor, borderBottomColor: theme.borderColor, color: theme.textColor }"
+        :style="{
+            backgroundColor: theme.currentTheme.headerColor,
+            borderBottomColor: theme.currentTheme.borderColor,
+            color: theme.currentTheme.textColor,
+        }"
     >
         <div class="wrapper header-content">
             <div class="header-left_content">
                 <img
                     class="logo"
-                    :src="theme.logoUrl"
+                    :src="theme.currentTheme.logoUrl"
                     alt="Logo not found"
                 />
-                <SearchBox :theme-store="theme" :api-store="catsAPI"/>
+                <SearchBox
+                    :theme="theme.currentTheme"
+                    :api-store="catsAPI"
+                />
             </div>
             <div class="header-right_content">
-                <SettingsBox :theme-store="theme" :api-store="catsAPI"/>
+                <SettingsBox
+                    :theme="theme.currentTheme"
+                    :api-store="catsAPI"
+                />
                 <ThemePicker :theme-store="theme" />
             </div>
         </div>
     </header>
     <main
         class="main"
-        :style="{ backgroundColor: theme.bodyColor, color: theme.textColor }"
+        :style="{
+            backgroundColor: theme.currentTheme.bodyColor,
+            color: theme.currentTheme.textColor,
+        }"
     >
         <Cards
             :api-store="catsAPI"
-            :theme-store="theme"
+            :theme="theme.currentTheme"
             :items="catsAPI.cats"
         />
     </main>
@@ -59,5 +72,5 @@ export default defineComponent({
 </script>
 
 <style>
-@import url(./assets/css/main.css);
+@import url(./assets/css/app.css);
 </style>

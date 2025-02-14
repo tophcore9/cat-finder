@@ -1,19 +1,17 @@
 <template>
     <div
         class="card"
-        :style="{ borderColor: themeStore.borderColor, backgroundImage: `url(${cat.url})` }"
+        :style="{ borderColor: theme.borderColor, backgroundImage: `url(${cat.url})` }"
         @click.self="showModal"
     >
         <div
             class="favorite"
             :style="{
                 backgroundImage: `url(${
-                    cat.isFavorite
-                        ? themeStore.favoritesActiveIconUrl
-                        : themeStore.favoritesIconUrl
+                    cat.isFavorite ? theme.favoritesActiveIconUrl : theme.favoritesIconUrl
                 })`,
-                backgroundColor: themeStore.headerColor,
-                borderColor: themeStore.borderColor,
+                backgroundColor: theme.headerColor,
+                borderColor: theme.borderColor,
             }"
             @click="changeFavorite"
         ></div>
@@ -21,12 +19,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import type Theme from '@/stores/theme';
+import { defineComponent, type PropType } from 'vue';
 
 export default defineComponent({
     props: {
-        themeStore: {
-            type: Object,
+        theme: {
+            type: Object as PropType<Theme>,
             required: true,
         },
         apiStore: {

@@ -1,106 +1,30 @@
 html,
 body,
 #app {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 /* For avoiding shifting by count of images */
 body {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 /* Disabeling side-arrows in number input fields */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-input[type='number'] {
-    -moz-appearance: textfield;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.wrapper {
-    margin: auto;
-    padding: 32px 64px;
-
-    width: 100%;
-    height: 100%;
-    max-width: 1440px;
-}
-@media (max-width: 1065px) {
-    .wrapper {
-        padding: 16px;
-    }
-}
-
-.header {
-    width: 100%;
-    height: 124px;
-
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    position: fixed;
-    z-index: 1;
-
-    transition: background-color 0.2s ease-out;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-@media (max-width: 1000px) {
-    .header-content {
-        flex-direction: column;
-    }
-    .logo {
-        width: 36px;
-    }
-}
-
-.header-left_content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-}
-@media (max-width: 1000px) {
-    .header-left_content {
-        width: 100%;
-        justify-content: flex-start;
-    }
-}
-
-.header-right_content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-}
-@media (max-width: 1000px) {
-    .header-right_content {
-        align-self: flex-end;
-    }
-}
-
-.main {
-    padding-top: 124px;
-    min-height: 100%;
-
-    transition: background-color 0.2s ease-out;
-
-    position: relative;
+input[type=number] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
 }

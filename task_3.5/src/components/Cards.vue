@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper cards">
         <Card
-            :theme-store="themeStore"
+            :theme="theme"
             :api-store="apiStore"
             v-for="(item, index) in items"
             :key="index"
@@ -27,8 +27,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, type PropType } from 'vue';
 import Card from '@/components/Card.vue';
+import type ThemeStore from '@/stores/theme';
+import type { CatsStore } from '@/stores/catsAPI';
 
 export default defineComponent({
     components: {
@@ -41,8 +43,8 @@ export default defineComponent({
         };
     },
     props: {
-        themeStore: {
-            type: Object,
+        theme: {
+            type: Object as PropType<ThemeStore>,
             required: true,
         },
         items: {
@@ -50,7 +52,7 @@ export default defineComponent({
             required: false,
         },
         apiStore: {
-            type: Object,
+            type: Object as PropType<CatsStore>,
             required: true,
         },
     },

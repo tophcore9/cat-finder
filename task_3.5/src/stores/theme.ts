@@ -1,14 +1,51 @@
 import { defineStore } from 'pinia';
 
-const Theme = {
-    light: 'light',
-    dark: 'dark',
-} as const;
-type Theme = (typeof Theme)[keyof typeof Theme];
+export default interface Theme {
+    themeName: string;
 
+    logoUrl: string;
+    settingsIconUrl: string;
+    settingsActiveIconUrl: string;
+    themeIconUrl: string,
+    searchIconUrl: string,
+    favoritesIconUrl: string,
+    favoritesActiveIconUrl: string,
+    favoritesCheckedIconUrl: string,
+
+    textColor: string,
+    activeColor: string,
+    headerColor: string,
+    bodyColor: string,
+    elementColor: string,
+    borderColor: string,
+}
+
+export interface ThemeStore {
+    currentTheme: Theme;
+    toggleTheme: () => void;
+};
+
+export const useThemeStore = defineStore('currentTheme', {
+    state: () => {
+        return {
+            currentTheme: lightTheme
+        };
+    },
+    actions: {
+        toggleTheme() {
+            if (this.currentTheme.themeName === lightTheme.themeName) {
+                this.currentTheme = darkTheme;
+            } else if (this.currentTheme.themeName === darkTheme.themeName) {
+                this.currentTheme = lightTheme;
+            }
+        },
+    },
+});
+
+/* THEMES */
 /* DARK THEME */
-const darkTheme = {
-    currentTheme: Theme.dark,
+const darkTheme: Theme = {
+    themeName: 'dark',
 
     logoUrl: '/src/assets/icons/logo-dark_theme.svg',
     settingsIconUrl: '/src/assets/icons/settings-dark_theme.svg',
@@ -28,8 +65,8 @@ const darkTheme = {
 };
 
 /* LIGHT THEME */
-const lightTheme = {
-    currentTheme: Theme.light,
+const lightTheme: Theme = {
+    themeName: 'light',
 
     logoUrl: '/src/assets/icons/logo-light_theme.svg',
     settingsIconUrl: '/src/assets/icons/settings-light_theme.svg',
@@ -47,39 +84,3 @@ const lightTheme = {
     elementColor: '#FFFFFF',
     borderColor: '#DEDFE5',
 };
-
-export const useThemeStore = defineStore('theme', {
-    state: () => {
-        return {
-            currentTheme: lightTheme.currentTheme,
-
-            logoUrl: lightTheme.logoUrl,
-            settingsIconUrl: lightTheme.settingsIconUrl,
-            settingsActiveIconUrl: lightTheme.settingsActiveIconUrl,
-            themeIconUrl: lightTheme.themeIconUrl,
-            searchIconUrl: lightTheme.searchIconUrl,
-            favoritesIconUrl: lightTheme.favoritesIconUrl,
-            favoritesActiveIconUrl: lightTheme.favoritesActiveIconUrl,
-            favoritesCheckedIconUrl: lightTheme.favoritesCheckedIconUrl,
-
-            textColor: lightTheme.textColor,
-            activeColor: lightTheme.activeColor,
-            headerColor: lightTheme.headerColor,
-            bodyColor: lightTheme.bodyColor,
-            elementColor: lightTheme.elementColor,
-            borderColor: lightTheme.borderColor,
-        };
-    },
-    actions: {
-        toggleTheme() {
-            if (this.currentTheme === Theme.light) {
-                Object.assign(this, darkTheme);
-            } else if (this.currentTheme === Theme.dark) {
-                Object.assign(this, lightTheme);
-            }
-        },
-    },
-    persist: {
-        storage: sessionStorage
-    }
-});

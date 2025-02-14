@@ -1,77 +1,72 @@
 .settings-box {
-    appearance: none;
-
-    width: 36px;
-    height: 36px;
-
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 50%;
-
-    background-repeat: no-repeat;
-    background-position: center;
-
-    opacity: 0.7;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 36px;
+  height: 36px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
 }
 .settings-box:checked {
-    opacity: 1;
+  opacity: 1;
 }
 .settings-box:hover {
-    cursor: pointer;
-    opacity: 1;
+  cursor: pointer;
+  opacity: 1;
 }
 
 .limit {
-    padding-left: 16px;
-
-    height: 36px;
-    width: auto;
-
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 20px;
+  padding-left: 16px;
+  height: 36px;
+  width: auto;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 20px;
 }
 .limit:focus {
-    outline: 0;
-    border: 1px solid #ffc682 !important;
-}
-@media (max-width: 445px) {
-    .limit {
-        width: 100px;
-    }
+  outline: 0;
+  border: 1px solid #ffc682 !important;
 }
 
+@media (max-width: 500px) {
+  .limit {
+    width: 100px;
+  }
+}
 .settings-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
 .favorites {
-    appearance: none;
-
-    width: 36px;
-    height: 36px;
-
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 50%;
-
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.85;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 36px;
+  height: 36px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.85;
 }
 .favorites:checked {
-    outline: 0;
-    border: 1px solid #ffc682 !important;
-    opacity: 1;
+  outline: 0;
+  border: 1px solid #ffc682 !important;
+  opacity: 1;
 }
 .favorites:hover {
-    cursor: pointer;
-    opacity: 1;
+  cursor: pointer;
+  opacity: 1;
 }
 
 .label {
-    font-size: 12px;
+  font-size: 12px;
 }

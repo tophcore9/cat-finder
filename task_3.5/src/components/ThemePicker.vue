@@ -2,17 +2,18 @@
     <button
         @click="themeStore.toggleTheme"
         class="theme-picker"
-        :style="{ backgroundImage: `url(${themeStore.themeIconUrl})` }"
+        :style="{ backgroundImage: `url(${themeStore.currentTheme.themeIconUrl})` }"
     ></button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import type { ThemeStore } from '@/stores/theme';
+import { defineComponent, type PropType } from 'vue';
 
 export default defineComponent({
     props: {
         themeStore: {
-            type: Object,
+            type: Object as PropType<ThemeStore>,
             required: true,
         },
     },

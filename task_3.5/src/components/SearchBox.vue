@@ -6,16 +6,18 @@
         v-model="searchInput"
         @change="apiStore.fetchCats()"
         :style="{
-            backgroundImage: `url(${themeStore.searchIconUrl})`,
-            borderColor: themeStore.borderColor,
-            backgroundColor: themeStore.elementColor,
-            color: themeStore.textColor,
+            backgroundImage: `url(${theme.searchIconUrl})`,
+            borderColor: theme.borderColor,
+            backgroundColor: theme.elementColor,
+            color: theme.textColor,
         }"
     />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import type { CatsStore } from '@/stores/catsAPI';
+import type Theme from '@/stores/theme';
+import { defineComponent, type PropType } from 'vue';
 
 export default defineComponent({
     data() {
@@ -24,12 +26,12 @@ export default defineComponent({
         };
     },
     props: {
-        themeStore: {
-            type: Object,
+        theme: {
+            type: Object as PropType<Theme>,
             required: true,
         },
         apiStore: {
-            type: Object,
+            type: Object as PropType<CatsStore>,
             required: true,
         },
     },
