@@ -3,8 +3,8 @@
 .settings-box {
     appearance: none;
 
-    width: 36px;
-    height: 36px;
+    width: 2rem;
+    height: 2rem;
 
     border-width: 1px;
     border-style: solid;
@@ -25,9 +25,9 @@
 }
 
 .limit {
-    padding-left: 16px;
+    padding-left: 1rem;
 
-    height: 36px;
+    height: 2rem;
     width: auto;
 
     border-width: 1px;
@@ -41,7 +41,7 @@
 }
 @media (max-width: $breakpoint-sm) {
     .limit {
-        width: 100px;
+        width: 5rem;
     }
 }
 
@@ -49,14 +49,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
 }
 
 .favorites {
     appearance: none;
 
-    width: 36px;
-    height: 36px;
+    width: 2rem;
+    height: 2rem;
 
     border-width: 1px;
     border-style: solid;

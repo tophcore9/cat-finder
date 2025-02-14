@@ -6,11 +6,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr) auto;
-    gap: 32px;
+    gap: 2rem;
 }
 @media (max-width: $breakpoint-md) {
     .cards {
-        gap: 16px;
+        gap: 1rem;
     }
 }
 @media (max-width: $breakpoint-md) {
@@ -37,9 +37,9 @@
 }
 
 .image-wrapper {
-    padding: 24px;
+    padding: 1.5rem;
     max-width: 100vw;
-    max-height: calc(100vh - 124px);
+    max-height: calc(100vh - 8rem);
     height: 100%;
     width: 100%;
 
@@ -48,7 +48,7 @@
     align-items: center;
 
     position: fixed;
-    top: 124px;
+    top: 8rem;
 }
 
 .image {

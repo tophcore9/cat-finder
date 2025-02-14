@@ -2,8 +2,8 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  width: 36px;
-  height: 36px;
+  width: 2rem;
+  height: 2rem;
   border-width: 1px;
   border-style: solid;
   border-radius: 50%;
@@ -20,8 +20,8 @@
 }
 
 .limit {
-  padding-left: 16px;
-  height: 36px;
+  padding-left: 1rem;
+  height: 2rem;
   width: auto;
   border-width: 1px;
   border-style: solid;
@@ -34,22 +34,22 @@
 
 @media (max-width: 500px) {
   .limit {
-    width: 100px;
+    width: 5rem;
   }
 }
 .settings-menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .favorites {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  width: 36px;
-  height: 36px;
+  width: 2rem;
+  height: 2rem;
   border-width: 1px;
   border-style: solid;
   border-radius: 50%;
