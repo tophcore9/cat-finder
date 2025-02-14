@@ -7,31 +7,33 @@ export interface Cat {
     isFavorite: boolean;
 }
 
-export interface CatsStore {
-    cats: Cat[] /* An array of cats that will be shown */,
-    favoriteCats: Cat[] /* Cats that we're already added to the favorite list */,
-    areFavoriteCardsOn: boolean /* Check if site shows only favorite cats at the moment */,
-    searchInput: string[] /* Amount of tags that build a search prompt together */,
-    limit: number /* How many cards from API the user wants to get */,
-    
-    fetchCats: () => void,
-    addFavorite: (cat: Cat) => void,
-    removeFavorite: (id: string) => void,
-    toggleFavoriteCats: () => void
+interface CatsState {
+    cats: Cat[] /* An array of cats that will be shown */;
+    favoriteCats: Cat[] /* Cats that we're already added to the favorite list */;
+    areFavoriteCardsOn: boolean /* Check if site shows only favorite cats at the moment */;
+    searchInput: string[] /* Amount of tags that build a search prompt together */;
+    limit: number /* How many cards from API the user wants to get */;
+}
+
+export interface CatsStore extends CatsState {
+    fetchCats: () => void;
+    addFavorite: (cat: Cat) => void;
+    removeFavorite: (id: string) => void;
+    toggleFavoriteCats: () => void;
 }
 
 const catsAPI: string = 'https://cataas.com/api/cats';
 const catById: string = 'https://cataas.com/cat';
 
 export const useCatsStore = defineStore('cats', {
-    state: () => {
+    state: (): CatsState => {
         return {
-            cats: [] as Cat[],
-            favoriteCats: [] as Cat[],
+            cats: [],
+            favoriteCats: [],
             areFavoriteCardsOn: false,
             searchInput: [],
             limit: 10,
-        };
+        }
     },
     actions: {
         async fetchCats() {
