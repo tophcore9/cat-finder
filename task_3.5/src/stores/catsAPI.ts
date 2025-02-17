@@ -22,8 +22,10 @@ export interface CatsStore extends CatsState {
     toggleFavoriteCats: () => void;
 }
 
-const catsAPI: string = 'https://cataas.com/api/cats';
-const catById: string = 'https://cataas.com/cat';
+enum CatsAPI {
+    getList = 'https://cataas.com/api/cats',
+    getById = 'https://cataas.com/cat',
+}
 
 export const useCatsStore = defineStore('cats', {
     state: (): CatsState => {
@@ -38,12 +40,12 @@ export const useCatsStore = defineStore('cats', {
     actions: {
         async fetchCats() {
             /* Fetching API and getting according items */
-            const response = await fetch(`${catsAPI}?tags=${this.searchInput}&limit=${this.limit}`);
+            const response = await fetch(`${CatsAPI.getList}?tags=${this.searchInput}&limit=${this.limit}`);
             this.cats = await response.json();
             this.areFavoriteCardsOn = false;
 
             this.cats.forEach((element) => {
-                element.url = `${catById}/${element.id}`;
+                element.url = `${CatsAPI.getById}/${element.id}`;
                 element.isFavorite = false;
 
                 this.favoriteCats.forEach((favoriteCat) => {
