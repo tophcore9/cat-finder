@@ -1,33 +1,70 @@
-# task_3.5
+# Cat Finder
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a fun and simple front-end application designed to find and display cat photos or information. It's an excellent project for showcasing skills in working with external APIs and building a clean, interactive user interface.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Getting Started
 
-## Type Support for `.vue` Imports in TS
+### Installation
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/tophcore9/cat-finder.git
+    cd cat-finder
+    ```
 
-## Customize configuration
+2.  **Install project dependencies:**
+    ```bash
+    yarn
+    ```
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Running the Project
 
-## Project Setup
+1.  **Start the development server:**
+    ```bash
+    yarn dev
+    ```
 
-```sh
-yarn
-```
+2.  Open your browser and navigate to `http://localhost:5173` (or the specific port shown in your terminal).
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
-yarn dev
-```
+## 🛠️ Technologies
 
-### Type-Check, Compile and Minify for Production
+* **Vue.js**
+* **Vite** (if used for building)
+* **HTML5**, **CSS3**, **JavaScript**
+* **Yarn** (Package Manager)
 
-```sh
-yarn build
-```
+---
+
+## ✨ Features
+
+* Fetches and displays data from a public API
+* Dynamic and responsive UI
+* Clean and user-friendly design
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! If you would like to help improve this project, please follow these steps:
+
+1.  Fork this repository.
+2.  Create a new branch (`git checkout -b feature/your-feature-name`).
+3.  Make your changes and commit them (`git commit -m 'feat: add a new feature'`).
+4.  Push to your branch (`git push origin feature/your-feature-name`).
+5.  Create a **Pull Request**.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+## 👨‍💻 Author
+
+* **Oleksii Paziura** - [@tophcore9](https://github.com/tophcore9)
