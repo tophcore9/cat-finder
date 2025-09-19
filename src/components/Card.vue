@@ -52,5 +52,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import url(../assets/css/card.css);
+@import url(/public/assets/css/card.css);
 </style>

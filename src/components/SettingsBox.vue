@@ -77,5 +77,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import url(../assets/css/settings_box.css);
+@import url(/public/assets/css/settings_box.css);
 </style>

@@ -45,5 +45,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import url(../assets/css/search_box.css);
+@import url(/public/assets/css/search_box.css);
 </style>

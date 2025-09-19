@@ -70,5 +70,5 @@ export default defineComponent({
 </script>
 
 <style>
-@import url(./assets/css/app.css);
+@import url(/public/assets/css/app.css);
 </style>
