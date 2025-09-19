@@ -1,0 +1,21 @@
+.search-box {
+  padding-left: 2rem;
+  border-width: 1px;
+  border-style: solid;
+  height: 2rem;
+  width: 20rem;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+}
+.search-box:focus {
+  outline: 0;
+  border: 1px solid #ffc682 !important;
+}
+
+@media (max-width: 1065px) {
+  .search-box {
+    width: auto;
+    flex-grow: 2;
+  }
+}
